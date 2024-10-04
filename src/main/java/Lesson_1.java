@@ -1,6 +1,5 @@
 public class Lesson_1 {
     public static void main(String[] args) {
-<<<<<<< HEAD
         printThreeWords();
         checkSumSign();
         printColor();
@@ -8,10 +7,6 @@ public class Lesson_1 {
         System.out.println(sumRange(5, 5));
         getNumber(-1000);
         System.out.println(getNumber1(-10));
-=======
-        int i = 0; //another check
->>>>>>> cef79050a1f9e7cfffecbf8fc056e77545737e2c
-
     }
     //Task_1
     public static void printThreeWords(){
