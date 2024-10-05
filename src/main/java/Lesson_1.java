@@ -1,12 +1,26 @@
 public class Lesson_1 {
     public static void main(String[] args) {
-        printThreeWords();
-        checkSumSign();
-        printColor();
-        compareNumbers();
-        System.out.println(sumRange(5, 5));
-        getNumber(-1000);
-        System.out.println(getNumber1(-10));
+        printThreeWords(); //1
+        checkSumSign(); //2
+        printColor(); //3
+        compareNumbers(); //4
+        System.out.println(sumRange(5, 5)); //5
+        getNumber(-1000); //6
+        System.out.println(getNumber1(-10)); //7
+        numberLines(3, "Aston"); //8
+        System.out.println(determineYear(2024)); //9
+        int[] arrayReplace = {1,1,0,0,1,0,1,1,0,0,0,0};
+        replaceElements(arrayReplace);
+        for(int i: arrayReplace){
+            System.out.print(i); //10
+        }
+        System.out.println();
+        int[] arrayFill = fillArray(); // 11
+        System.out.println();
+        multiplyArray(); //12
+        System.out.println();
+        fillDiagonals(5); //13
+        int[] crArray = createArray(10,52); //14
     }
     //Task_1
     public static void printThreeWords(){
@@ -66,5 +80,77 @@ public class Lesson_1 {
         if(a >= 0){
             return false;
         } else return true;
+    }
+    //Task_8
+    public static void numberLines(int a, String b){
+        for(int i = 0; i < a; i++){
+            System.out.println(b);
+        }
+    }
+    //Task_9
+    public static boolean determineYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+    //Task_10
+    public static void replaceElements(int[] a){
+        for(int i = 0; i < a.length; i++){
+            if(a[i] == 1){
+                a[i] = 0;
+            }else a[i] = 1;
+        }
+    }
+    //Task_11
+    public static int[] fillArray(){
+        int[] array = new int[100];
+        for(int i = 0; i < array.length; i++){
+            array[i] = i + 1;
+        }
+        for(int i = 0; i < array.length; i++){
+            System.out.print(array[i]); //11
+            if(i < array.length - 1){
+                System.out.print(" ");
+            }
+        }
+        return array;
+    }
+    //Task_12
+    public static void multiplyArray(){
+        int [] array = {1,5,3,2,11,4,5,2,4,8,9,1};
+        for(int i = 0; i < array.length; i++){
+            if(array[i] < 6){
+                array[i]*= 2;
+            }
+        }
+        for(int i: array){
+            System.out.print(i);
+        }
+    }
+    //Task_13
+    public static void fillDiagonals(int a){
+        int[][] array = new int[a][a];
+        for(int i = 0; i < a; i++){
+            array[i][i] = 1;
+            array[i][a-1-i] = 1;
+        }
+        for(int[] i: array){
+            for(int j: i){
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+    //Task_14
+    public static int[] createArray(int len, int initalValue){
+        int[] array = new int[len];
+        for (int i = 0; i < array.length; i++){
+            array[i] = initalValue;
+        }
+        for(int i = 0; i < array.length; i++){
+            System.out.print(array[i]); //11
+            if(i < array.length - 1){
+                System.out.print(" ");
+            }
+        }
+        return array;
     }
 }
