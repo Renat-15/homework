@@ -106,7 +106,7 @@ public class Lesson_1 {
             array[i] = i + 1;
         }
         for(int i = 0; i < array.length; i++){
-            System.out.print(array[i]); //11
+            System.out.print(array[i]);
             if(i < array.length - 1){
                 System.out.print(" ");
             }
@@ -121,8 +121,11 @@ public class Lesson_1 {
                 array[i]*= 2;
             }
         }
-        for(int i: array){
-            System.out.print(i);
+        for(int i = 0; i < array.length; i++){
+            System.out.print(array[i]);
+            if(i < array.length - 1){
+                System.out.print(" ");
+            }
         }
     }
     //Task_13
