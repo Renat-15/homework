@@ -27,4 +27,8 @@ public class Animal {
     public static int getAnimalCount() {
         return animalCount;
     }
+
+    public String getName() {
+        return name;
+    }
 }
