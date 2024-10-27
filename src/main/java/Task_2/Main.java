@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Площадь: " + rectangle.calculateArea());
         System.out.println("Периметр: " + rectangle.calculatePerimeter());
         System.out.println("Цвет фона: " + rectangle.getColor());
-        System.out.println("Цает границ: " + rectangle.getBorderColor());
+        System.out.println("Цвет границ: " + rectangle.getBorderColor());
         System.out.println();
 
         Triangle triangle = new Triangle("Black", "Green", 10, 10, 10);
