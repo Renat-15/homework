@@ -10,11 +10,11 @@ public class Main {
         cat.run(100);
         cat.swim(0);
 
-        FoodBowl foodBowl = new FoodBowl(12);
+        FoodBowl foodBowl = new FoodBowl(12); // Сколько всего в миске
         Cat[] cats = {new Cat("Кот1"), new Cat("Кот2"), new Cat("Кот3")};
 
         for(Cat cat1: cats){
-            cat1.eat(foodBowl, 6);
+            cat1.eat(foodBowl, 6); // Сколько одному коту нужно поесть
         }
 
         foodBowl.addFood(18);
@@ -24,7 +24,7 @@ public class Main {
         }
 
         System.out.println("Общее количество животных: " + Animal.getAnimalCount());
-        System.out.println("Количесвто собак: " + Dog.getDogCount());
+        System.out.println("Количество собак: " + Dog.getDogCount());
         System.out.println("Количество котов: " + Cat.getCatCount());
 
     }
