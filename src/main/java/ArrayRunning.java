@@ -1,6 +1,6 @@
 public class ArrayRunning {
     public void runArray(String[][] array) throws MyArraySizeException, MyArrayDataException{
-        if(array.length != 4 || array[0].length != 4){ // Если поданный массив не соответствует размеру 4х4
+        if(array.length != 4 || array[0].length != 4){ // Если массив не соответствует размеру 4х4
             throw new MyArraySizeException("Ошибка: размер массива должен быть 4х4"); // То выбрасывается это исключение
         }
 
@@ -24,7 +24,6 @@ public class ArrayRunning {
             }
             System.out.println();
         }
-
         System.out.println("Сумма элементов массива: " + sum);
     }
 }
