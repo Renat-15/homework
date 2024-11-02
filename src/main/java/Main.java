@@ -9,7 +9,6 @@ public class Main {
                     {"13", "14", "15", "16"}
             };
             arrayRunning.runArray(invalidDataArray);
-
         } catch (MyArraySizeException | MyArrayDataException exception){
             exception.printStackTrace();
         }
