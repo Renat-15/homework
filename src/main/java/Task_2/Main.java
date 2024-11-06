@@ -12,7 +12,6 @@ public class Main {
         phoneDirectory.add("Огурцов", "89321234500");
         phoneDirectory.add("Огурцов", "89321234111");
 
-
         ArrayList<String> phones = phoneDirectory.get("Огурцов");
         for(String phone: phones){
             System.out.println(phone);
