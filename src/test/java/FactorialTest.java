@@ -3,7 +3,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class FactorialTest {
-
     @Test
     public void correctFactorialZero(){ // Тест для успешного подсчёта факториала нуля
         Factorial factorial = new Factorial();
