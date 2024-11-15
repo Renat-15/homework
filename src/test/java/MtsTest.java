@@ -59,6 +59,7 @@ public class MtsTest {
             assertTrue(logo.isDisplayed());
         }
     }
+
     @Test
     @DisplayName("link testing")
     public void testLinkService(){
@@ -85,7 +86,6 @@ public class MtsTest {
 
         WebElement continueButton = driver.findElement(By.xpath("//button[contains(@class, 'button__default') and contains(text(), 'Продолжить')]"));
         continueButton.click();
-
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10 секунд ожидания
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@class='bepaid-iframe']"))); // ожидание когда появится iframe
