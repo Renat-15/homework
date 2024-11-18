@@ -162,9 +162,9 @@ public class MtsPrivateClientsPage extends BasePage{ // содержить ме�
     private final By validityPeriod = By.xpath("//div[@class='content ng-tns-c46-4']/label[text()='Срок действия']");
     private final By CVCLocator = By.xpath("//div[@class='content ng-tns-c46-5']//label[text()='CVC']");
     private final By nameOfTheHolderLocator = By.xpath("//div[@class='content ng-tns-c46-3']//label[text()='Имя держателя (как на карте)']");
-    private final By logoVisaLocator = By.xpath("   //div[contains(@class, 'cards-brands')]/img[contains(@src, 'assets/images/payment-icons/card-types/visa-system.svg')]");
-    private final By logoMastercardLocator = By.xpath("   //div[contains(@class, 'cards-brands')]/img[contains(@src, 'assets/images/payment-icons/card-types/mastercard-system.svg')]");
-    private final By logoBelkartLocator = By.xpath("   //div[contains(@class, 'cards-brands')]/img[contains(@src, 'assets/images/payment-icons/card-types/belkart-system.svg')]");
+    private final By logoVisaLocator = By.xpath("//div[contains(@class, 'cards-brands')]/img[contains(@src, 'assets/images/payment-icons/card-types/visa-system.svg')]");
+    private final By logoMastercardLocator = By.xpath("//div[contains(@class, 'cards-brands')]/img[contains(@src, 'assets/images/payment-icons/card-types/mastercard-system.svg')]");
+    private final By logoBelkartLocator = By.xpath("//div[contains(@class, 'cards-brands')]/img[contains(@src, 'assets/images/payment-icons/card-types/belkart-system.svg')]");
     private final By logoMirCardLocator = By.xpath("//div[contains(@class, 'cards-brands') and contains(@class, 'cards-brands_random')]");
     private final By cardNumberLocator1 = By.xpath("//input[@id='cc-number']");
     private final By validityPeriodLocator = By.xpath("//div[@class='content ng-tns-c46-4']//input[@formcontrolname='expirationDate']");
