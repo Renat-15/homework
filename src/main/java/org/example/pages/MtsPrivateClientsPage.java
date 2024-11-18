@@ -152,5 +152,82 @@ public class MtsPrivateClientsPage extends BasePage{ // содержить ме�
     public WebElement getEmailPlace1(){
         return driver.findElement(emailPlaceLocator4);
     }
+    public void openServicesDropdown3(){
+        driver.findElement(servicesDropdown).click();
+    }
 
+    private final By servicesOption = By.xpath("//li[@class='select__item active']/p[@class='select__option' and text()='Услуги связи']");
+    private final By phoneNumberLocator = By.xpath("//div[@class='pay-description__text']/span[contains(text(), 'Оплата: Услуги связи') and contains(text(), 'Номер:375297777777')]");
+    private final By cardNumberLocator = By.xpath("//div[@class='content ng-tns-c46-1']/label[text()='Номер карты']");
+    private final By validityPeriod = By.xpath("//div[@class='content ng-tns-c46-4']/label[text()='Срок действия']");
+    private final By CVCLocator = By.xpath("//div[@class='content ng-tns-c46-5']//label[text()='CVC']");
+    private final By nameOfTheHolderLocator = By.xpath("//div[@class='content ng-tns-c46-3']//label[text()='Имя держателя (как на карте)']");
+    private final By logoVisaLocator = By.xpath("   //div[contains(@class, 'cards-brands')]/img[contains(@src, 'assets/images/payment-icons/card-types/visa-system.svg')]");
+    private final By logoMastercardLocator = By.xpath("   //div[contains(@class, 'cards-brands')]/img[contains(@src, 'assets/images/payment-icons/card-types/mastercard-system.svg')]");
+    private final By logoBelkartLocator = By.xpath("   //div[contains(@class, 'cards-brands')]/img[contains(@src, 'assets/images/payment-icons/card-types/belkart-system.svg')]");
+    private final By logoMirCardLocator = By.xpath("//div[contains(@class, 'cards-brands') and contains(@class, 'cards-brands_random')]");
+    private final By cardNumberLocator1 = By.xpath("//input[@id='cc-number']");
+    private final By validityPeriodLocator = By.xpath("//div[@class='content ng-tns-c46-4']//input[@formcontrolname='expirationDate']");
+    private final By CVCLocator1 = By.xpath("//div[@class='content ng-tns-c46-5']//input[@formcontrolname='cvc']");
+    private final By nameOfTheHolderLocator1 = By.xpath("//div[@class='content ng-tns-c46-3']//input[@formcontrolname='holder']");
+    private final By payButtonLocator = By.xpath("//button[@class='colored' and text()=' Оплатить  100.00 BYN ']");
+
+
+    public void selectServices(){
+        openServicesDropdown2();
+        driver.findElement(servicesOption).click();
+    }
+
+    // Метод для получения элемента с суммой
+    public WebElement getBynElement1(){
+        return driver.findElement(bynElementLocator);
+    }
+
+    // Метод для получения элемента
+    public WebElement getPhoneNumber(){
+        return driver.findElement(phoneNumberLocator);
+    }
+    public WebElement getCardNumber(){
+        return driver.findElement(cardNumberLocator);
+    }
+    public WebElement getValidityPeriod(){
+        return driver.findElement(validityPeriod);
+    }
+    public WebElement getCVC(){
+        return driver.findElement(CVCLocator);
+    }
+    public WebElement getNameOfTheHolder(){
+        return driver.findElement(nameOfTheHolderLocator);
+    }
+    public WebElement getLogoVisa(){
+        return driver.findElement(logoVisaLocator);
+    }
+    public WebElement getLogoMastercard(){
+        return driver.findElement(logoMastercardLocator);
+    }
+    public WebElement getlogoBelkart(){
+        return driver.findElement(logoBelkartLocator);
+    }
+    public WebElement getLogoMirCard(){
+        return driver.findElement(logoMirCardLocator);
+    }
+    public void enterCardNumber(String CardNumber){
+        WebElement cardNumberInput = driver.findElement(cardNumberLocator1);
+        cardNumberInput.sendKeys(CardNumber);
+    }
+    public void enterValidityPeriod(String validityPeriod){
+        WebElement validityPeriodInput = driver.findElement(validityPeriodLocator);
+        validityPeriodInput.sendKeys(validityPeriod);
+    }
+    public void enterCVC(String cvc){
+        WebElement CVCInput = driver.findElement(CVCLocator1);
+        CVCInput.sendKeys(cvc);
+    }
+    public void enterNameOfTheHolder(String nameOfTheHolder){
+        WebElement nameOfTheHolderInput = driver.findElement(nameOfTheHolderLocator1);
+        nameOfTheHolderInput.sendKeys(nameOfTheHolder);
+    }
+    public WebElement getPayButton(){
+        return driver.findElement(payButtonLocator);
+    }
 }

@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -115,5 +117,43 @@ public class MtsTest {
         assertEquals("Номер счета на 2073", steps.getAccountNumberPlaceholder1());
         assertEquals("Сумма", steps.getAmountPlaceholder4());
         assertEquals("E-mail для отправки чека", steps.getEmailPlaceholder1());
+    }
+    @Test
+    @DisplayName("Checking the iframe")
+    public void testIframe(){
+        steps.enterPhoneNumber("297777777");
+        steps.enterAmount("100");
+        steps.enterEmail("mail@mail.ru");
+        steps.clickContinueButton();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        // ожидание когда появится iframe
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@class='bepaid-iframe']")));
+        // ожидание когда элемент станет доступен
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='pay-description__cost']//span[not(contains(@class,'pay-description__cost_converted'))]")));
+        //Проверка корректности отображения суммы
+        assertEquals("100.00 BYN", steps.getBynText().getText());
+        assertTrue(steps.getBynText().isDisplayed());
+        //Проверка корректности отображения номера телефона
+        assertEquals("Оплата: Услуги связи " + "Номер:375297777777", steps.getPhoneNumberPlace());
+        // Проверка надписей в незаполненных полях для ввода реквизитов карты
+        List<String> exeptedIframePlaceholders = Arrays.asList("Номер карты", "Срок действия", "CVC", "Имя держателя (как на карте)");
+        List<String> actualIframePlaceholders = Arrays.asList(steps.getCardNumberSt(), steps.getValidityPeriodPlace(),
+                steps.getCVCPlace(), steps.getNameOfTheHolderPlace());
+        for (int i = 0; i < exeptedIframePlaceholders.size(); i++) {
+            assertEquals(exeptedIframePlaceholders.get(i), actualIframePlaceholders.get(i));
+        }
+        // Наличие иконок платёжных систем
+        steps.isVisibleLogoVisa(); // Видимость логотипа VISA
+        steps.isVidibleLogoMastercard(); // Видимость логтипа Mastercard
+        steps.isVidiblelogoBelkart(); // Видимость логотипа Belkart
+        steps.isVidibleLogoMirCard(); // Видимость логотипа карты МИР
+        // Проверка корректности отображения суммы на кнопке
+        steps.enterCardNumber1("4111 1111 1111 1111");
+        steps.enterValidityPeriod1("06 / 55");
+        steps.enterCVC1("123");
+        steps.enterNameOfTheHolder1("RENAT KHAMATNUROV");
+        assertEquals("Оплатить 100.00 BYN", steps.getpayButton1().getText());
+        assertTrue(steps.getpayButton1().isDisplayed());
     }
 }

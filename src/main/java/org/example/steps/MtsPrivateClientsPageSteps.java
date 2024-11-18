@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-
 public class MtsPrivateClientsPageSteps { // для выполнения действий в тестах
+
     private final MtsPrivateClientsPage mtsPrivateClientsPage;
     private final WebDriver driver;
 
@@ -82,5 +82,46 @@ public class MtsPrivateClientsPageSteps { // для выполнения дей�
     public String getEmailPlaceholder1(){
         return mtsPrivateClientsPage.getEmailPlace1().getAttribute("placeholder");
     }
-
+    public String getPhoneNumberPlace(){
+        return mtsPrivateClientsPage.getPhoneNumber().getText();
+    }
+    public String getCardNumberSt(){
+        return mtsPrivateClientsPage.getCardNumber().getText();
+    }
+    public String getValidityPeriodPlace(){
+        return mtsPrivateClientsPage.getValidityPeriod().getText();
+    }
+    public String getCVCPlace(){
+        return mtsPrivateClientsPage.getCVC().getText();
+    }
+    public String getNameOfTheHolderPlace(){
+        return mtsPrivateClientsPage.getNameOfTheHolder().getText();
+    }
+    public boolean isVisibleLogoVisa(){
+        return mtsPrivateClientsPage.getLogoVisa().isDisplayed();
+    }
+    public boolean isVidibleLogoMastercard(){
+        return mtsPrivateClientsPage.getLogoMastercard().isDisplayed();
+    }
+    public boolean isVidiblelogoBelkart(){
+        return mtsPrivateClientsPage.getlogoBelkart().isDisplayed();
+    }
+    public boolean isVidibleLogoMirCard(){
+        return mtsPrivateClientsPage.getLogoMirCard().isDisplayed();
+    }
+    public void enterCardNumber1(String CardNumber){
+        mtsPrivateClientsPage.enterCardNumber(CardNumber);
+    }
+    public void enterValidityPeriod1(String validityPeriod){
+        mtsPrivateClientsPage.enterValidityPeriod(validityPeriod);
+    }
+    public void enterCVC1(String cvc){
+        mtsPrivateClientsPage.enterCVC(cvc);
+    }
+    public void enterNameOfTheHolder1(String nameOfTheHolder){
+        mtsPrivateClientsPage.enterNameOfTheHolder(nameOfTheHolder);
+    }
+    public WebElement getpayButton1(){
+        return mtsPrivateClientsPage.getPayButton();
+    }
 }
