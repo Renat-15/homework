@@ -12,13 +12,13 @@ import static org.hamcrest.Matchers.*;
 public class testApi {
     @Test
     public void testGetRequest() {
-        RestAssured.baseURI = "https://postman-echo.com/get";
+        RestAssured.baseURI = "https://postman-echo.com";
 
         Response response = RestAssured.given() // объект запроса. given() позволяет задавать параметры для http запроса
                 .queryParam("foo1", "bar1") // добавляет параметр к URL строке запроса
                 .queryParam("foo2", "bar2")
                 .when()
-                .get();
+                .get("/get");
 
         response.then().statusCode(200); // строка на проверку равен ли стату с код 200
 
@@ -31,13 +31,13 @@ public class testApi {
     @Test
     public void testPostRawText(){
         String requestBody = "This is expected to be sent back as part of response body.";
-        RestAssured.baseURI = "https://postman-echo.com/post";
+        RestAssured.baseURI = "https://postman-echo.com";
 
         Response response = RestAssured.given()
                 .header("Content-Type", "text/plain")
                 .body(requestBody)
                 .when()
-                .post();
+                .post("/post");
 
         response.then().statusCode(200);
 
